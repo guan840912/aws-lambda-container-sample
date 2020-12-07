@@ -1,6 +1,5 @@
 ## This is Lambda Custom Container Sample repo .
 
-```
 
 ### To deploy
 ```bash
