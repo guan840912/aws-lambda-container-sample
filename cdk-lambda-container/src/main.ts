@@ -4,6 +4,7 @@ import * as _lambda_integ from '@aws-cdk/aws-apigatewayv2-integrations';
 import * as _lambda from '@aws-cdk/aws-lambda';
 import * as cdk from '@aws-cdk/core';
 import { Override } from './override';
+import { MyStackCode } from './imagefromecr';
 
 export class MyStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props: cdk.StackProps = {}) {
@@ -43,7 +44,7 @@ const devEnv = {
 };
 
 const app = new cdk.App();
-
+new MyStackCode(app, 'imagecode', { env: devEnv });
 new MyStack(app, 'my-stack-dev', { env: devEnv });
 
 app.synth();
